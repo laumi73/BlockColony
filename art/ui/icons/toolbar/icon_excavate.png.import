@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vry5kavcehlk"
-path="res://.godot/imported/shovel_silver - Copy.png-de11c21aea24e05867ae13225e6f8e0e.ctex"
+uid="uid://d23yhc6q2urxq"
+path="res://.godot/imported/icon_excavate.png-a9c152cfd9800e0ce98a9fec9f7332b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ui/icons/toolbar/shovel_silver - Copy.png"
-dest_files=["res://.godot/imported/shovel_silver - Copy.png-de11c21aea24e05867ae13225e6f8e0e.ctex"]
+source_file="res://art/ui/icons/toolbar/icon_excavate.png"
+dest_files=["res://.godot/imported/icon_excavate.png-a9c152cfd9800e0ce98a9fec9f7332b6.ctex"]
 
 [params]
 
