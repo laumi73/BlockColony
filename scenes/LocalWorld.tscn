@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4x8k280pf8mf"]
 
-[ext_resource type="PackedScene" uid="uid://xhx10iy1ei5c" path="res://scenes/ui/global/TimescaleMenu.tscn" id="1_83fm4"]
+[ext_resource type="PackedScene" uid="uid://xhx10iy1ei5c" path="res://scenes/ui/global/TimescaleMenu_old.tscn" id="1_83fm4"]
+
 
 [node name="LocalWorld" type="Node"]
 

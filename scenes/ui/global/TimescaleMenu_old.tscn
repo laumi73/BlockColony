@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://xhx10iy1ei5c"]
+
+[ext_resource type="Texture2D" uid="uid://bv54j7o4q0tox" path="res://resources/textures/ui/icons/timescaleMenu/pause.png" id="1_8xdh8"]
+[ext_resource type="Texture2D" uid="uid://bcnt3y0yqsg7i" path="res://resources/textures/ui/icons/timescaleMenu/play.png" id="2_oet55"]
+[ext_resource type="ButtonGroup" path="res://resources/buttonGroups/timescaleMenuButtonGroup.tres" id="2_qpugg"]
+[ext_resource type="Texture2D" uid="uid://ba7tedhsdcp0j" path="res://resources/textures/ui/icons/timescaleMenu/play2x.png" id="3_f2syk"]
+[ext_resource type="ButtonGroup" path="res://resources/buttonGroups/timescale.tres" id="3_nwa2n"]
+[ext_resource type="Texture2D" uid="uid://1falcmbrto66" path="res://resources/textures/ui/icons/timescaleMenu/play3x.png" id="4_g2ub3"]
+
+[node name="TimescaleMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 60.0
+pivot_offset = Vector2(240, 0)
+
+[node name="PauseButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+tooltip_text = "Pause game"
+toggle_mode = true
+button_group = ExtResource("2_qpugg")
+icon = ExtResource("1_8xdh8")
+expand_icon = true
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 120.0
+offset_bottom = 60.0
+tooltip_text = "Resume game"
+toggle_mode = true
+button_group = ExtResource("3_nwa2n")
+icon = ExtResource("2_oet55")
+expand_icon = true
+
+[node name="PlayButton2x" type="Button" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 180.0
+offset_bottom = 60.0
+tooltip_text = "Speed up game by a factor of 2"
+toggle_mode = true
+button_group = ExtResource("3_nwa2n")
+icon = ExtResource("3_f2syk")
+expand_icon = true
+
+[node name="PlayButton3x" type="Button" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_right = 240.0
+offset_bottom = 60.0
+tooltip_text = "Speed up game by a factor of 4"
+toggle_mode = true
+button_group = ExtResource("3_nwa2n")
+icon = ExtResource("4_g2ub3")
+expand_icon = true
