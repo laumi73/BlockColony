@@ -1,9 +1,31 @@
-[gd_scene format=3 uid="uid://ygpdniep3kcr"]
+[gd_scene load_steps=4 format=3 uid="uid://ygpdniep3kcr"]
+
+[ext_resource type="ButtonGroup" uid="uid://f8e8u0ndt40d" path="res://resources/buttonGroups/toolbar.tres" id="1_y3qdq"]
+[ext_resource type="Texture2D" uid="uid://d23yhc6q2urxq" path="res://resources/textures/ui/icons/toolbar/icon_excavate.png" id="1_yrgyw"]
+[ext_resource type="Texture2D" uid="uid://dg82fib78v86y" path="res://resources/textures/ui/icons/toolbar/seed - Copy.png" id="2_pkbb0"]
 
 [node name="Toolbar" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 100.0
+
+[node name="ExcavateButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 100.0
+offset_bottom = 100.0
+toggle_mode = true
+button_group = ExtResource("1_y3qdq")
+icon = ExtResource("1_yrgyw")
+expand_icon = true
+
+[node name="PlantButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 220.0
+offset_bottom = 100.0
+toggle_mode = true
+button_group = ExtResource("1_y3qdq")
+icon = ExtResource("2_pkbb0")
+expand_icon = true
