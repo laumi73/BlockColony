@@ -7,14 +7,15 @@
 [node name="Toolbar" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 100.0
+offset_right = 180.0
+offset_bottom = 80.0
+pivot_offset = Vector2(90, 80)
 
 [node name="ExcavateButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_right = 100.0
-offset_bottom = 100.0
+offset_right = 80.0
+offset_bottom = 80.0
 toggle_mode = true
 button_group = ExtResource("1_y3qdq")
 icon = ExtResource("1_yrgyw")
@@ -22,9 +23,9 @@ expand_icon = true
 
 [node name="PlantButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 120.0
-offset_right = 220.0
-offset_bottom = 100.0
+offset_left = 100.0
+offset_right = 180.0
+offset_bottom = 80.0
 toggle_mode = true
 button_group = ExtResource("1_y3qdq")
 icon = ExtResource("2_pkbb0")
