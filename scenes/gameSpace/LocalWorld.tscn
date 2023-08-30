@@ -1,5 +1,15 @@
-[gd_scene format=3 uid="uid://b4x8k280pf8mf"]
+[gd_scene load_steps=3 format=3 uid="uid://cjqv2b22kx2yb"]
 
-[node name="LocalWorld" type="Node"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_pwshx"]
 
-[node name="Node3D" type="Node3D" parent="."]
+[sub_resource type="BoxMesh" id="BoxMesh_dm27i"]
+
+[node name="LocalWorld" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_pwshx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_dm27i")

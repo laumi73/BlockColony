@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dreyob30nmm0e"]
 
-[ext_resource type="PackedScene" uid="uid://y3j2fkvmsyra" path="res://scenes/ui/global/TimescaleMenu.tscn" id="1_flu5j"]
-[ext_resource type="PackedScene" uid="uid://b4x8k280pf8mf" path="res://scenes/gameSpace/LocalWorld.tscn" id="2_2ce2b"]
-[ext_resource type="PackedScene" uid="uid://ygpdniep3kcr" path="res://scenes/ui/localWorld/Toolbar.tscn" id="3_56ti1"]
+[ext_resource type="PackedScene" uid="uid://y3j2fkvmsyra" path="res://scenes/ui/TimescaleMenu.tscn" id="1_flu5j"]
+[ext_resource type="PackedScene" uid="uid://ygpdniep3kcr" path="res://scenes/ui/Toolbar.tscn" id="3_56ti1"]
+[ext_resource type="PackedScene" uid="uid://cjqv2b22kx2yb" path="res://scenes/gameSpace/LocalWorld.tscn" id="3_e0xyi"]
 
 [node name="Main" type="Node"]
-
-[node name="LocalWorld" parent="." instance=ExtResource("2_2ce2b")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -38,3 +36,5 @@ offset_right = 90.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="LocalWorld" parent="." instance=ExtResource("3_e0xyi")]
