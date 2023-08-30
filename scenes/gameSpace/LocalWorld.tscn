@@ -1,39 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4x8k280pf8mf"]
-
-[ext_resource type="PackedScene" uid="uid://y3j2fkvmsyra" path="res://scenes/ui/global/TimescaleMenu.tscn" id="1_ldig4"]
-[ext_resource type="PackedScene" uid="uid://ygpdniep3kcr" path="res://scenes/ui/localWorld/Toolbar.tscn" id="2_t1ob2"]
+[gd_scene format=3 uid="uid://b4x8k280pf8mf"]
 
 [node name="LocalWorld" type="Node"]
 
 [node name="Node3D" type="Node3D" parent="."]
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TimescaleMenu" parent="Control" instance=ExtResource("1_ldig4")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -240.0
-offset_right = 0.0
-grow_horizontal = 0
-
-[node name="Toolbar" parent="Control" instance=ExtResource("2_t1ob2")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -90.0
-offset_top = -80.0
-offset_right = 90.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
