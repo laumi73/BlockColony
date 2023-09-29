@@ -1,32 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://ygpdniep3kcr"]
+[gd_scene load_steps=5 format=3 uid="uid://bjw0yuts5p8jl"]
 
+[ext_resource type="Theme" uid="uid://dg73idqflwxjf" path="res://themes/toolbar.tres" id="1_relvm"]
 [ext_resource type="ButtonGroup" uid="uid://f8e8u0ndt40d" path="res://resources/buttonGroups/toolbar.tres" id="1_y3qdq"]
-[ext_resource type="Texture2D" uid="uid://d23yhc6q2urxq" path="res://resources/textures/ui/icons/toolbar/icon_excavate.png" id="1_yrgyw"]
-[ext_resource type="Texture2D" uid="uid://dg82fib78v86y" path="res://resources/textures/ui/icons/toolbar/seed - Copy.png" id="2_pkbb0"]
+[ext_resource type="Texture2D" uid="uid://d23yhc6q2urxq" path="res://resources/textures/ui/icons/toolbar/icon_excavate.png" id="2_d6b3u"]
+[ext_resource type="Texture2D" uid="uid://dg82fib78v86y" path="res://resources/textures/ui/icons/toolbar/seed - Copy.png" id="3_m3pqs"]
 
 [node name="Toolbar" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 180.0
-offset_bottom = 80.0
-pivot_offset = Vector2(90, 80)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_relvm")
 
-[node name="ExcavateButton" type="Button" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-offset_right = 80.0
-offset_bottom = 80.0
-toggle_mode = true
-button_group = ExtResource("1_y3qdq")
-icon = ExtResource("1_yrgyw")
-expand_icon = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.5
+offset_top = -168.0
+offset_right = 155.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
 
-[node name="PlantButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 180.0
-offset_bottom = 80.0
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_relvm")
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
 toggle_mode = true
+keep_pressed_outside = true
 button_group = ExtResource("1_y3qdq")
-icon = ExtResource("2_pkbb0")
-expand_icon = true
+texture_normal = ExtResource("2_d6b3u")
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+toggle_mode = true
+keep_pressed_outside = true
+button_group = ExtResource("1_y3qdq")
+texture_normal = ExtResource("3_m3pqs")

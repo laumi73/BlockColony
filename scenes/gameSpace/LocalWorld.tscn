@@ -13,3 +13,9 @@ shape = SubResource("BoxShape3D_pwshx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_dm27i")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 5, 5, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.762488, -0.342227, 0.549084, 0, 0.848658, 0.528942, -0.647003, -0.403312, 0.647091, 0, 0, 0)

@@ -1,40 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dreyob30nmm0e"]
+[gd_scene load_steps=3 format=3 uid="uid://dreyob30nmm0e"]
 
-[ext_resource type="PackedScene" uid="uid://y3j2fkvmsyra" path="res://scenes/ui/TimescaleMenu.tscn" id="1_flu5j"]
-[ext_resource type="PackedScene" uid="uid://ygpdniep3kcr" path="res://scenes/ui/Toolbar.tscn" id="3_56ti1"]
+[ext_resource type="PackedScene" uid="uid://d2dn678y342vv" path="res://scenes/ui/UserInterface.tscn" id="2_kggu7"]
 [ext_resource type="PackedScene" uid="uid://cjqv2b22kx2yb" path="res://scenes/gameSpace/LocalWorld.tscn" id="3_e0xyi"]
 
 [node name="Main" type="Node"]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TimescaleMenu" parent="Control" instance=ExtResource("1_flu5j")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -160.0
-offset_right = 0.0
-grow_horizontal = 0
-
-[node name="Toolbar" parent="Control" instance=ExtResource("3_56ti1")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -90.0
-offset_top = -80.0
-offset_right = 90.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
-
 [node name="LocalWorld" parent="." instance=ExtResource("3_e0xyi")]
+
+[node name="UserInterface" parent="." instance=ExtResource("2_kggu7")]

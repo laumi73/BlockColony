@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2dn678y342vv"]
+
+[ext_resource type="PackedScene" uid="uid://bjw0yuts5p8jl" path="res://scenes/ui/Toolbar.tscn" id="1_anfyl"]
+
+[node name="UserInterface" type="CanvasLayer"]
+
+[node name="Toolbar" parent="." instance=ExtResource("1_anfyl")]
