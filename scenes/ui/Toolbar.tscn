@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_relvm")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Base_MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -30,35 +30,35 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 50
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="Base_PanelContainer" type="PanelContainer" parent="Base_MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="Toolbar_MarginContainer" type="MarginContainer" parent="Base_MarginContainer/Base_PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="Toolbar_HBoxContainer" type="HBoxContainer" parent="Base_MarginContainer/Base_PanelContainer/Toolbar_MarginContainer"]
 layout_mode = 2
 theme = ExtResource("1_relvm")
 theme_override_constants/separation = 15
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Excavate_PanelContainer" type="PanelContainer" parent="Base_MarginContainer/Base_PanelContainer/Toolbar_MarginContainer/Toolbar_HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer"]
+[node name="Excavate_Button" type="TextureButton" parent="Base_MarginContainer/Base_PanelContainer/Toolbar_MarginContainer/Toolbar_HBoxContainer/Excavate_PanelContainer"]
 layout_mode = 2
 toggle_mode = true
 keep_pressed_outside = true
 button_group = ExtResource("1_y3qdq")
 texture_normal = ExtResource("2_d6b3u")
 
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="Base_MarginContainer/Base_PanelContainer/Toolbar_MarginContainer/Toolbar_HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/PanelContainer2"]
+[node name="TextureButton2" type="TextureButton" parent="Base_MarginContainer/Base_PanelContainer/Toolbar_MarginContainer/Toolbar_HBoxContainer/PanelContainer2"]
 layout_mode = 2
 toggle_mode = true
 keep_pressed_outside = true

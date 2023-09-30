@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2dn678y342vv"]
+[gd_scene load_steps=3 format=3 uid="uid://4jwrv548gvjr"]
 
+[ext_resource type="PackedScene" uid="uid://brxmm1cg3pac0" path="res://scenes/ui/Calendar.tscn" id="1_3lh14"]
 [ext_resource type="PackedScene" uid="uid://bjw0yuts5p8jl" path="res://scenes/ui/Toolbar.tscn" id="1_anfyl"]
 
 [node name="UserInterface" type="CanvasLayer"]
+
+[node name="Calendar" parent="." instance=ExtResource("1_3lh14")]
 
 [node name="Toolbar" parent="." instance=ExtResource("1_anfyl")]
