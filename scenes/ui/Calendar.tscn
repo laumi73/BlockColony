@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://brxmm1cg3pac0"]
 
-[ext_resource type="Texture2D" uid="uid://blvsqco1u363u" path="res://resources/textures/ui/icons/timescaleMenu/moon.png" id="1_rnnpx"]
+[ext_resource type="Texture2D" uid="uid://blvsqco1u363u" path="res://resources/textures/ui/icons/calendar/moon.png" id="1_41pla"]
 [ext_resource type="ButtonGroup" uid="uid://i1ev0vysbug5" path="res://resources/buttonGroups/calendar.tres" id="2_c6fct"]
-[ext_resource type="Texture2D" uid="uid://bv54j7o4q0tox" path="res://resources/textures/ui/icons/timescaleMenu/pause.png" id="3_ujooo"]
-[ext_resource type="Texture2D" uid="uid://bcnt3y0yqsg7i" path="res://resources/textures/ui/icons/timescaleMenu/play.png" id="4_ux8ds"]
-[ext_resource type="Texture2D" uid="uid://ba7tedhsdcp0j" path="res://resources/textures/ui/icons/timescaleMenu/play2x.png" id="5_xrb7q"]
-[ext_resource type="Texture2D" uid="uid://1falcmbrto66" path="res://resources/textures/ui/icons/timescaleMenu/play3x.png" id="6_kiuis"]
+[ext_resource type="Texture2D" uid="uid://bv54j7o4q0tox" path="res://resources/textures/ui/icons/calendar/pause.png" id="3_qehc7"]
+[ext_resource type="Texture2D" uid="uid://bcnt3y0yqsg7i" path="res://resources/textures/ui/icons/calendar/play.png" id="4_euopt"]
+[ext_resource type="Texture2D" uid="uid://ba7tedhsdcp0j" path="res://resources/textures/ui/icons/calendar/play2x.png" id="5_n8ya6"]
+[ext_resource type="Texture2D" uid="uid://1falcmbrto66" path="res://resources/textures/ui/icons/calendar/play3x.png" id="6_xmlpb"]
 
 [node name="Calendar" type="Control"]
 layout_mode = 3
@@ -43,7 +43,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="Base_MarginContainer/Base_PanelContainer/VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_rnnpx")
+texture = ExtResource("1_41pla")
 expand_mode = 5
 stretch_mode = 5
 
@@ -57,7 +57,7 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_c6fct")
-texture_normal = ExtResource("3_ujooo")
+texture_normal = ExtResource("3_qehc7")
 
 [node name="PanelContainer2" type="PanelContainer" parent="Base_MarginContainer/Base_PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -66,7 +66,7 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_c6fct")
-texture_normal = ExtResource("4_ux8ds")
+texture_normal = ExtResource("4_euopt")
 
 [node name="PanelContainer3" type="PanelContainer" parent="Base_MarginContainer/Base_PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -75,7 +75,7 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_c6fct")
-texture_normal = ExtResource("5_xrb7q")
+texture_normal = ExtResource("5_n8ya6")
 
 [node name="PanelContainer4" type="PanelContainer" parent="Base_MarginContainer/Base_PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -84,4 +84,4 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("2_c6fct")
-texture_normal = ExtResource("6_kiuis")
+texture_normal = ExtResource("6_xmlpb")
