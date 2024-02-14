@@ -1,0 +1,13 @@
+draw 1 face DONE
+draw 6 faces DONE BUT NOT VERIFIED
+add player camera movement
+add face texture
+fix face uv
+add multplie types of block
+add collider - add 1 cube
+test collider
+add multiple cubes (8)
+optimize mesh drawing by eliminating obscured ones - add 1 chunk
+add multple chunks
+optimize mesh drawing by eliminating obscured ones 
+add terrain generation
