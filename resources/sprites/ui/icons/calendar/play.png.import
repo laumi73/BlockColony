@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwrbyxcb25rhb"
-path="res://.godot/imported/sun.png-feea3ef9a33601d97e7343f107ef491c.ctex"
+uid="uid://bcnt3y0yqsg7i"
+path="res://.godot/imported/play.png-3f4d6950fa72ce4b9f30d9b8b1e0b88e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/ui/icons/calendar/sun.png"
-dest_files=["res://.godot/imported/sun.png-feea3ef9a33601d97e7343f107ef491c.ctex"]
+source_file="res://resources/sprites/ui/icons/calendar/play.png"
+dest_files=["res://.godot/imported/play.png-3f4d6950fa72ce4b9f30d9b8b1e0b88e.ctex"]
 
 [params]
 

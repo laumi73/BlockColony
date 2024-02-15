@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d23yhc6q2urxq"
-path="res://.godot/imported/icon_excavate.png-ea3d4ee50edd4102b45fb82e16b2e2c6.ctex"
+uid="uid://cq4s4jq5r62mr"
+path="res://.godot/imported/moonFull.png-3477277bd31fd0ca1b3ec50f469ddeaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/ui/icons/toolbar/icon_excavate.png"
-dest_files=["res://.godot/imported/icon_excavate.png-ea3d4ee50edd4102b45fb82e16b2e2c6.ctex"]
+source_file="res://resources/sprites/ui/icons/calendar/moonFull.png"
+dest_files=["res://.godot/imported/moonFull.png-3477277bd31fd0ca1b3ec50f469ddeaf.ctex"]
 
 [params]
 

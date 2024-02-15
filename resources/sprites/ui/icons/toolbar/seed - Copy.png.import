@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba7tedhsdcp0j"
-path="res://.godot/imported/play2x.png-cc1828ed1d6b1a9875b6f25b7cabc9fe.ctex"
+uid="uid://dg82fib78v86y"
+path="res://.godot/imported/seed - Copy.png-94291d13fd71ff252abfec5145499984.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/textures/ui/icons/calendar/play2x.png"
-dest_files=["res://.godot/imported/play2x.png-cc1828ed1d6b1a9875b6f25b7cabc9fe.ctex"]
+source_file="res://resources/sprites/ui/icons/toolbar/seed - Copy.png"
+dest_files=["res://.godot/imported/seed - Copy.png-94291d13fd71ff252abfec5145499984.ctex"]
 
 [params]
 
