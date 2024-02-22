@@ -1,6 +1,5 @@
 draw 1 face DONE
 draw 6 faces DONE BUT NOT VERIFIED
-add player camera movement
 add face texture
 fix face uv
 add multplie types of block

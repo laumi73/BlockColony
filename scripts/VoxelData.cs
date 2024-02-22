@@ -24,6 +24,13 @@ namespace GameSpace
 			{1, 2, 0, 3}  // Back face
 		};
 
+		public static readonly Vector2[] voxelUvs = new Vector2[4] {
+			new(1f, 0f),
+			new(1f, 1f),
+			new(0f, 0f),
+			new(0f, 1f)
+		};
+
 		public enum FaceIndex {
 			TOP = 0,
 			BOTTOM = 1,
