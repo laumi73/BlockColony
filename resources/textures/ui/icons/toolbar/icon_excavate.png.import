@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d23yhc6q2urxq"
-path="res://.godot/imported/icon_excavate.png-304e5634d89f706b334c64d6d8f7f739.ctex"
+path="res://.godot/imported/icon_excavate.png-ea3d4ee50edd4102b45fb82e16b2e2c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/ui/icons/toolbar/icon_excavate.png"
-dest_files=["res://.godot/imported/icon_excavate.png-304e5634d89f706b334c64d6d8f7f739.ctex"]
+source_file="res://resources/textures/ui/icons/toolbar/icon_excavate.png"
+dest_files=["res://.godot/imported/icon_excavate.png-ea3d4ee50edd4102b45fb82e16b2e2c6.ctex"]
 
 [params]
 

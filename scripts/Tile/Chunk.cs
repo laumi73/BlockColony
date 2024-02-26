@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-namespace GameSpace
+namespace GameSpace.Tile
 {
     public partial class Chunk : Node3D
     {
@@ -13,12 +13,16 @@ namespace GameSpace
         private SurfaceTool _surfaceTool = new();
         private Material _material;
 
+        public int[,,] blockArray;
+
+
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
         {
             base._Ready();
             _material = GD.Load<StandardMaterial3D>(BlockData.BASE_BLOCK_ATLAS_FILEPATH);
             
+            blockArray = PopulateChunk();
             DrawBlock();
         }
 
@@ -26,6 +30,10 @@ namespace GameSpace
         public override void _Process(double delta)
         {
             base._Process(delta);
+        }
+
+        private int[,,] PopulateChunk() {
+            return new int[ChunkData.CHUNK_WIDTH, ChunkData.CHUNK_HEIGHT, ChunkData.CHUNK_WIDTH];
         }
 
         private void DrawBlock() {
@@ -62,10 +70,12 @@ namespace GameSpace
                 VoxelData.voxelVertices[VoxelData.voxelTriangles[directionIndex, 3]]
             };
 
-            Vector2 uvVertex_bottomRight = new(BlockData.BASE_BLOCK_TEXTURE_WIDTH, 0f);
-            Vector2 uvVertex_topRight = new(BlockData.BASE_BLOCK_TEXTURE_WIDTH, BlockData.BASE_BLOCK_TEXTURE_HEIGHT);
-            Vector2 uvVertex_bottomLeft = new(0f, 0f);
-            Vector2 uvVertex_topLeft = new(0f, BlockData.BASE_BLOCK_TEXTURE_HEIGHT);
+            Vector2 uvVertex_bottomRight = new((atlasXIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_WIDTH, atlasYIndex * BlockData.BASE_BLOCK_ATLAS_HEIGHT);
+            Vector2 uvVertex_topRight = 
+                new((atlasXIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_WIDTH,
+                (atlasYIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_HEIGHT);
+            Vector2 uvVertex_bottomLeft = new(atlasXIndex * BlockData.BASE_BLOCK_ATLAS_WIDTH, atlasYIndex * BlockData.BASE_BLOCK_ATLAS_HEIGHT);
+            Vector2 uvVertex_topLeft = new(atlasXIndex * BlockData.BASE_BLOCK_ATLAS_WIDTH, (atlasYIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_HEIGHT));
 
             Vector3[] triangle = new Vector3[] { vertices[0], vertices[1], vertices[2] };
             Vector2[] uv = new Vector2[] {uvVertex_bottomRight, uvVertex_topRight, uvVertex_bottomLeft};

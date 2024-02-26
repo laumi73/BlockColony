@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1falcmbrto66"
-path="res://.godot/imported/play3x.png-7cd53951e482e023e775e119262019ed.ctex"
+uid="uid://b8o53bu7ewp3k"
+path="res://.godot/imported/dirt_grass.png-cfa5b7941caa282bdfc908ded2323531.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/ui/icons/calendar/play3x.png"
-dest_files=["res://.godot/imported/play3x.png-7cd53951e482e023e775e119262019ed.ctex"]
+source_file="res://resources/textures/blocks/dirt_grass.png"
+dest_files=["res://.godot/imported/dirt_grass.png-cfa5b7941caa282bdfc908ded2323531.ctex"]
 
 [params]
 

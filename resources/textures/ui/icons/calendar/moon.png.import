@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba7tedhsdcp0j"
-path="res://.godot/imported/play2x.png-96536fcdb5f5b3c5413c8e265dc261aa.ctex"
+uid="uid://blvsqco1u363u"
+path="res://.godot/imported/moon.png-753c5e1bfd27e1b2832d49969b2861cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/ui/icons/calendar/play2x.png"
-dest_files=["res://.godot/imported/play2x.png-96536fcdb5f5b3c5413c8e265dc261aa.ctex"]
+source_file="res://resources/textures/ui/icons/calendar/moon.png"
+dest_files=["res://.godot/imported/moon.png-753c5e1bfd27e1b2832d49969b2861cd.ctex"]
 
 [params]
 
