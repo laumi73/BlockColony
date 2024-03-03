@@ -38,7 +38,7 @@ namespace LocalWorld.BlockNS
 
         public override string BlockName { get { return BLOCK_NAME; } }
         public override short BlockID { get { return BLOCK_ID; } }
-        public override (byte, byte)[] BlockFaceTextureAtlasIndexes{get {return blockFaceTextureAtlasIndexArray;}}
-        public override (float, float)[] BlockFaceTextureAtlasCoordinates{get {return blockFaceTextureAtlasCoordinateArray;}}
+        public override (byte, byte)[] BlockFaceTextureAtlasIndexes { get { return blockFaceTextureAtlasIndexArray; } }
+        public override (float, float)[] BlockFaceTextureAtlasCoordinates { get { return blockFaceTextureAtlasCoordinateArray; } }
     }
 }
