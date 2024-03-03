@@ -1,25 +1,22 @@
 using System;
 
-namespace GameSpace.Tile
+namespace LocalWorld.BlockNS
 {
-    public abstract class Block {        
-        // Fields
-        protected static (byte, byte)[] blockFaceTextureAtlasIndexArray = new (byte, byte)[6];
-        protected static (float, float)[] blockFaceTextureAtlasFractionalCoordinate = new (float, float)[6];
-        
+    public abstract class Block {
+        public static readonly Block[] blockList = new Block[short.MaxValue];
+
+        static Block() {
+            blockList[Grass.Instance.BlockID] = Grass.Instance;
+        }
+
         // Properties
-        public abstract string blockName {get;}
+        public abstract string BlockName {get;}
+        public abstract short BlockID {get;}
+        public abstract (byte, byte)[] BlockFaceTextureAtlasIndexes{get;}
+        public abstract (float, float)[] BlockFaceTextureAtlasCoordinates{get;}
 
         // Methods
-        public (byte, byte) getBlockFaceTextureAtlasIndex(VoxelData.FaceIndex faceIndex) {
-            return blockFaceTextureAtlasIndexArray[Convert.ToByte(faceIndex)];
-        }
-
-        public (float, float) getBlockFaceTextureAtlasCoordinate(VoxelData.FaceIndex faceIndex) {
-            return blockFaceTextureAtlasFractionalCoordinate[Convert.ToByte(faceIndex)];
-        }
-
-        protected static (float, float)[] convertToFractionalCoordinateArray((byte, byte)[] IndexArray) {
+        protected static (float, float)[] ConvertToFractionalCoordinateArray((byte, byte)[] IndexArray) {
             (float, float)[] outputArray = new (float, float)[6];
             for (byte i = 0; i < 6; i++) {
                 outputArray[i] = 

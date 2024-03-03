@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-namespace GameSpace.Tile
+namespace LocalWorld
 {
     public partial class Chunk : Node3D
     {
@@ -13,7 +13,7 @@ namespace GameSpace.Tile
         private SurfaceTool _surfaceTool = new();
         private Material _material;
 
-        public int[,,] blockArray;
+        public int[,,] blockArray = new int[ChunkData.CHUNK_WIDTH, ChunkData.CHUNK_HEIGHT, ChunkData.CHUNK_WIDTH];
 
 
         // Called when the node enters the scene tree for the first time.
@@ -75,7 +75,7 @@ namespace GameSpace.Tile
                 new((atlasXIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_WIDTH,
                 (atlasYIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_HEIGHT);
             Vector2 uvVertex_bottomLeft = new(atlasXIndex * BlockData.BASE_BLOCK_ATLAS_WIDTH, atlasYIndex * BlockData.BASE_BLOCK_ATLAS_HEIGHT);
-            Vector2 uvVertex_topLeft = new(atlasXIndex * BlockData.BASE_BLOCK_ATLAS_WIDTH, (atlasYIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_HEIGHT));
+            Vector2 uvVertex_topLeft = new(atlasXIndex * BlockData.BASE_BLOCK_ATLAS_WIDTH, (atlasYIndex + 1) * BlockData.BASE_BLOCK_TEXTURE_HEIGHT);
 
             Vector3[] triangle = new Vector3[] { vertices[0], vertices[1], vertices[2] };
             Vector2[] uv = new Vector2[] {uvVertex_bottomRight, uvVertex_topRight, uvVertex_bottomLeft};

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjqv2b22kx2yb"]
 
-[ext_resource type="Script" path="res://scripts/Chunk.cs" id="1_7nipb"]
+[ext_resource type="Script" path="res://scripts/Tile/Chunk.cs" id="1_7nipb"]
 
 [node name="LocalWorld" type="Node3D"]
 

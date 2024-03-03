@@ -1,6 +1,6 @@
 using Godot;
 
-namespace GameSpace.Tile
+namespace LocalWorld
 {
     public static class VoxelData
     {

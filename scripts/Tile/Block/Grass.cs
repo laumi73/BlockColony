@@ -1,19 +1,44 @@
 using System;
 
-namespace GameSpace.Tile
+namespace LocalWorld.BlockNS
 {
-    public sealed class Grass : Block {
-        static Grass() {
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.TOP)] = (5, 0);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BOTTOM)] = (5, 1);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.LEFT)] = (5, 1);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.RIGHT)] = (5, 1);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.FRONT)] = (5, 1);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BACK)] = (5, 1);
+    public sealed class Grass : Block
+    {
+        // Fields
+        private const short BLOCK_ID = 2;
+        private const string BLOCK_NAME = "Grass";
 
-            blockFaceTextureAtlasFractionalCoordinate = convertToFractionalCoordinateArray(blockFaceTextureAtlasIndexArray);
+        // Faces
+        private static readonly (byte, byte) _topFaceIndex = (5, 0);
+        private static readonly (byte, byte) _bottomFaceIndex = (5, 1);
+        private static readonly (byte, byte) _leftFaceIndex = _bottomFaceIndex;
+        private static readonly (byte, byte) _rightFaceIndex = _bottomFaceIndex;
+        private static readonly (byte, byte) _frontFaceIndex = _bottomFaceIndex;
+        private static readonly (byte, byte) _backFaceIndex = _bottomFaceIndex;
+
+
+        private static readonly (byte, byte)[] blockFaceTextureAtlasIndexArray = new (byte, byte)[6];
+        private static readonly (float, float)[] blockFaceTextureAtlasCoordinateArray = new (float, float)[6];
+
+        // Singleton setup
+        private static readonly Lazy<Grass> lazy = new(() => new Grass());
+        public static Grass Instance { get { return lazy.Value; } }
+
+        static Grass()
+        {
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.TOP)] = _topFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BOTTOM)] = _bottomFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.LEFT)] = _leftFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.RIGHT)] = _rightFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.FRONT)] = _frontFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BACK)] = _backFaceIndex;
+
+            blockFaceTextureAtlasCoordinateArray = ConvertToFractionalCoordinateArray(blockFaceTextureAtlasIndexArray);
         }
 
-        public override string blockName {get {return "Grass";}}
+        public override string BlockName { get { return BLOCK_NAME; } }
+        public override short BlockID { get { return BLOCK_ID; } }
+        public override (byte, byte)[] BlockFaceTextureAtlasIndexes{get {return blockFaceTextureAtlasIndexArray;}}
+        public override (float, float)[] BlockFaceTextureAtlasCoordinates{get {return blockFaceTextureAtlasCoordinateArray;}}
     }
 }

@@ -1,4 +1,4 @@
-namespace GameSpace.Tile
+namespace LocalWorld
 {
     public static class ChunkData
     {

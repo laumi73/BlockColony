@@ -1,5 +1,5 @@
 
 
-namespace GameSpace.Tests {
+namespace LocalWorld.Tests {
 
 }
