@@ -12,12 +12,12 @@ namespace LocalWorld.BlockNS
         public static Stone Instance { get { return lazy.Value; } }
 
         static Stone() {
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.TOP)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BOTTOM)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.LEFT)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.RIGHT)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.FRONT)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BACK)] = (2, 5);
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.TOP)] = (2, 5);
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BOTTOM)] = (2, 5);
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.LEFT)] = (2, 5);
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.RIGHT)] = (2, 5);
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.FRONT)] = (2, 5);
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BACK)] = (2, 5);
 
             blockFaceTextureAtlasCoordinateArray = ConvertToFractionalCoordinateArray(blockFaceTextureAtlasIndexArray);
         }

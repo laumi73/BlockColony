@@ -1,6 +1,6 @@
 namespace LocalWorld
 {
-    public static class BlockData
+    public static class BlockResources
     {
         public const string BASE_BLOCK_ATLAS_FILEPATH = "res://resources/spatialMaterials/blockMaterial.tres";
 

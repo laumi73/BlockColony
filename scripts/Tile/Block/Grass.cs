@@ -26,12 +26,12 @@ namespace LocalWorld.BlockNS
 
         static Grass()
         {
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.TOP)] = _topFaceIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BOTTOM)] = _bottomFaceIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.LEFT)] = _leftFaceIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.RIGHT)] = _rightFaceIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.FRONT)] = _frontFaceIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelData.FaceIndex.BACK)] = _backFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.TOP)] = _topFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BOTTOM)] = _bottomFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.LEFT)] = _leftFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.RIGHT)] = _rightFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.FRONT)] = _frontFaceIndex;
+            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BACK)] = _backFaceIndex;
 
             blockFaceTextureAtlasCoordinateArray = ConvertToFractionalCoordinateArray(blockFaceTextureAtlasIndexArray);
         }

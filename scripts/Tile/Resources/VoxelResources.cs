@@ -2,7 +2,7 @@ using Godot;
 
 namespace LocalWorld
 {
-    public static class VoxelData
+    public static class VoxelResources
     {
         public static readonly Vector3[] voxelVertices = new Vector3[8] {
 			new(0f, 0f, 0f), //0

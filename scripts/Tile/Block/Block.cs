@@ -20,8 +20,8 @@ namespace LocalWorld.BlockNS
             (float, float)[] outputArray = new (float, float)[6];
             for (byte i = 0; i < 6; i++) {
                 outputArray[i] = 
-                    (IndexArray[i].Item1 * BlockData.BASE_BLOCK_TEXTURE_WIDTH,
-                    IndexArray[i].Item2 * BlockData.BASE_BLOCK_TEXTURE_HEIGHT);
+                    (IndexArray[i].Item1 * BlockResources.BASE_BLOCK_TEXTURE_WIDTH,
+                    IndexArray[i].Item2 * BlockResources.BASE_BLOCK_TEXTURE_HEIGHT);
             }
             return outputArray;
         }
