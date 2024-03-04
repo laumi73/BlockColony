@@ -5,28 +5,27 @@ namespace LocalWorld.BlockNS
     public sealed class Stone : Block
     {
         // Fields
-        private static readonly (byte, byte)[] blockFaceTextureAtlasIndexArray = new (byte, byte)[6];
-        private static readonly (float, float)[] blockFaceTextureAtlasCoordinateArray = new (float, float)[6];
+        private readonly BlockResources.BlockDictionary _blockEnum = BlockResources.BlockDictionary.Stone;
+
+        // Faces
+        private static readonly (byte, byte) _topFaceIndex = (2, 5);
+        private static readonly (byte, byte) _bottomFaceIndex = _topFaceIndex;
+        private static readonly (byte, byte) _leftFaceIndex = _topFaceIndex;
+        private static readonly (byte, byte) _rightFaceIndex = _topFaceIndex;
+        private static readonly (byte, byte) _frontFaceIndex = _topFaceIndex;
+        private static readonly (byte, byte) _backFaceIndex = _topFaceIndex;
 
         // Singleton setup
         private static readonly Lazy<Stone> lazy = new(() => new Stone());
         public static Stone Instance { get { return lazy.Value; } }
 
-        static Stone()
-        {
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.TOP)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BOTTOM)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.LEFT)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.RIGHT)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.FRONT)] = (2, 5);
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BACK)] = (2, 5);
-
-            blockFaceTextureAtlasCoordinateArray = ConvertToFractionalCoordinateArray(blockFaceTextureAtlasIndexArray);
-        }
-
-        public override string BlockName { get { return "Stone"; } }
-        public override short BlockID { get { return 1; } }
-        public override (byte, byte)[] BlockFaceTextureAtlasIndexes { get { return blockFaceTextureAtlasIndexArray; } }
-        public override (float, float)[] BlockFaceTextureAtlasCoordinates { get { return blockFaceTextureAtlasCoordinateArray; } }
+        // Properties
+        public override BlockResources.BlockDictionary BlockEnum { get { return _blockEnum; } }
+        public override (byte, byte) TopFaceAtlasIndex { get { return _topFaceIndex; } }
+        public override (byte, byte) BottomFaceAtlasIndex { get { return _bottomFaceIndex; } }
+        public override (byte, byte) LeftFaceAtlasIndex { get { return _leftFaceIndex; } }
+        public override (byte, byte) RightFaceAtlasIndex { get { return _rightFaceIndex; } }
+        public override (byte, byte) FrontFaceAtlasIndex { get { return _frontFaceIndex; } }
+        public override (byte, byte) BackFaceAtlasIndex { get { return _backFaceIndex; } }
     }
 }

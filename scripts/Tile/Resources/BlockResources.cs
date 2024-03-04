@@ -1,3 +1,5 @@
+using LocalWorld.BlockNS;
+
 namespace LocalWorld
 {
     public static class BlockResources
@@ -9,5 +11,13 @@ namespace LocalWorld
 
         public const float BASE_BLOCK_TEXTURE_HEIGHT = 1f / BASE_BLOCK_ATLAS_HEIGHT;
         public const float BASE_BLOCK_TEXTURE_WIDTH = 1f / BASE_BLOCK_ATLAS_WIDTH;
+
+        public enum BlockDictionary
+        {
+            Air = 0,
+            Grass = 1,
+            Dirt = 2,
+            Stone = 3
+        }
     }
 }
