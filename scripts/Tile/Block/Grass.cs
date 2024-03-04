@@ -2,7 +2,7 @@ using System;
 
 namespace LocalWorld.BlockNS
 {
-    public sealed class Grass : Block
+    public sealed class Grass : BaseBlock
     {
         // Fields
         private readonly BlockResources.BlockDictionary _blockEnum = BlockResources.BlockDictionary.Grass;

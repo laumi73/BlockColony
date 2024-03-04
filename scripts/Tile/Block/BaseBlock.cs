@@ -2,19 +2,19 @@ using System;
 
 namespace LocalWorld.BlockNS
 {
-    public abstract class Block
+    public abstract class BaseBlock
     {
         // Fields
-        public static readonly Block[] blockList = new Block[short.MaxValue];
+        public static readonly BaseBlock[] blockList = new BaseBlock[short.MaxValue];
         protected readonly (byte, byte)[] blockFaceTextureAtlasIndexArray = new (byte, byte)[6];
         protected readonly (float, float)[] blockFaceTextureAtlasCoordinateArray = new (float, float)[6];
 
-        static Block()
+        static BaseBlock()
         {
             blockList[Grass.Instance.BlockID] = Grass.Instance;
         }
 
-        public Block()
+        public BaseBlock()
         {
             blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.TOP)] = TopFaceAtlasIndex;
             blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BOTTOM)] = BottomFaceAtlasIndex;
