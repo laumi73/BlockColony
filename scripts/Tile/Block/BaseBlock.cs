@@ -5,14 +5,8 @@ namespace LocalWorld.BlockNS
     public abstract class BaseBlock
     {
         // Fields
-        public static readonly BaseBlock[] blockList = new BaseBlock[short.MaxValue];
         protected readonly (byte, byte)[] blockFaceTextureAtlasIndexArray = new (byte, byte)[6];
         protected readonly (float, float)[] blockFaceTextureAtlasCoordinateArray = new (float, float)[6];
-
-        static BaseBlock()
-        {
-            blockList[Grass.Instance.BlockID] = Grass.Instance;
-        }
 
         public BaseBlock()
         {
