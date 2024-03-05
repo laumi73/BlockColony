@@ -31,7 +31,7 @@ namespace LocalWorld
             new(0f, 1f)
         };
 
-        public enum FaceIndex
+        public enum FaceIndex : byte
         {
             TOP = 0,
             BOTTOM = 1,

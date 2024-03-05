@@ -1,4 +1,5 @@
-using LocalWorld.BlockNS;
+using System;
+using System.Linq;
 
 namespace LocalWorld.BlockNS
 {
@@ -13,13 +14,19 @@ namespace LocalWorld.BlockNS
         public const float BASE_BLOCK_TEXTURE_HEIGHT = 1f / BASE_BLOCK_ATLAS_HEIGHT;
         public const float BASE_BLOCK_TEXTURE_WIDTH = 1f / BASE_BLOCK_ATLAS_WIDTH;
 
-        public static readonly BaseBlock[] blockList = new BaseBlock[short.MaxValue];
+        public static readonly BaseBlock[] blockList = new BaseBlock[((ushort)Enum.GetNames(typeof(BlockDictionary)).Length)];
         static BlockResources()
         {
-            blockList[Grass.Instance.BlockID] = Grass.Instance;
+            foreach (
+                BaseBlock block in typeof(BaseBlock).Assembly.GetTypes()
+                .Where(t => t.IsSubclassOf(typeof(BaseBlock)) && !t.IsAbstract)
+                .Cast<BaseBlock>().ToArray())
+            {
+                blockList[block.BlockID] = block;
+            }
         }
 
-        public enum BlockDictionary
+        public enum BlockDictionary : ushort
         {
             Air = 0,
             Grass = 1,

@@ -1,7 +1,11 @@
 namespace LocalWorld
 {
-    public readonly struct BlockStruct
+    public struct BlockStruct
     {
-        public readonly short blockID;
+        public BlockStruct() {
+            blockID = 0;
+        }
+
+        public ushort blockID;
     }
 }
