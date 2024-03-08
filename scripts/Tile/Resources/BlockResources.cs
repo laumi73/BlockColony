@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Godot;
 
 namespace LocalWorld.BlockNS
 {
@@ -18,11 +19,13 @@ namespace LocalWorld.BlockNS
         static BlockResources()
         {
             foreach (
-                BaseBlock block in typeof(BaseBlock).Assembly.GetTypes()
-                .Where(t => t.IsSubclassOf(typeof(BaseBlock)) && !t.IsAbstract)
-                .Cast<BaseBlock>().ToArray())
+                Type baseBlockSubclassType in typeof(BaseBlock).Assembly.GetTypes()
+                .Where(t => t.IsClass && t.IsSubclassOf(typeof(BaseBlock)) && !t.IsAbstract)
+                .ToArray())
             {
-                blockList[block.BlockID] = block;
+                GD.Print(baseBlockSubclassType);
+                //BaseBlock block = Convert.ChangeType(baseBlockSubclassType, typeof(BaseBlock)) 
+                //blockList[block.BlockID] = block;
             }
         }
 

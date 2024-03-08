@@ -10,12 +10,12 @@ namespace LocalWorld.BlockNS
 
         public BaseBlock()
         {
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.TOP)] = TopFaceAtlasIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BOTTOM)] = BottomFaceAtlasIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.LEFT)] = LeftFaceAtlasIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.RIGHT)] = RightFaceAtlasIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.FRONT)] = FrontFaceAtlasIndex;
-            blockFaceTextureAtlasIndexArray[Convert.ToByte(VoxelResources.FaceIndex.BACK)] = BackFaceAtlasIndex;
+            blockFaceTextureAtlasIndexArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.TOP]] = TopFaceAtlasIndex;
+            blockFaceTextureAtlasIndexArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.BOTTOM]] = BottomFaceAtlasIndex;
+            blockFaceTextureAtlasIndexArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.LEFT]] = LeftFaceAtlasIndex;
+            blockFaceTextureAtlasIndexArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.RIGHT]] = RightFaceAtlasIndex;
+            blockFaceTextureAtlasIndexArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.FRONT]] = FrontFaceAtlasIndex;
+            blockFaceTextureAtlasIndexArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.BACK]] = BackFaceAtlasIndex;
 
             blockFaceTextureAtlasCoordinateArray = ConvertToFractionalCoordinateArray(blockFaceTextureAtlasIndexArray);
         }
@@ -32,12 +32,12 @@ namespace LocalWorld.BlockNS
         protected abstract (byte, byte) FrontFaceAtlasIndex { get; }
         protected abstract (byte, byte) BackFaceAtlasIndex { get; }
 
-        public (byte, byte) TopFaceAtlasUVCoordinate{ get; }
-        public (byte, byte) BottomFaceAtlasUVCoordinate{ get; }
-        public (byte, byte) LeftFaceAtlasUVCoordinate { get; }
-        public (byte, byte) RightFaceAtlasUVCoordinate { get; }
-        public (byte, byte) FrontFaceAtlasUVCoordinate { get; }
-        public (byte, byte) BackFaceAtlasUVCoordinate { get; }
+        public (float, float) TopFaceAtlasUVCoordinate{ get {return blockFaceTextureAtlasCoordinateArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.TOP]];} }
+        public (float, float) BottomFaceAtlasUVCoordinate{ get{return blockFaceTextureAtlasCoordinateArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.BOTTOM]];} }
+        public (float, float) LeftFaceAtlasUVCoordinate { get{return blockFaceTextureAtlasCoordinateArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.LEFT]];} }
+        public (float, float) RightFaceAtlasUVCoordinate { get{return blockFaceTextureAtlasCoordinateArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.RIGHT]];} }
+        public (float, float) FrontFaceAtlasUVCoordinate { get{return blockFaceTextureAtlasCoordinateArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.FRONT]];} }
+        public (float, float) BackFaceAtlasUVCoordinate { get{return blockFaceTextureAtlasCoordinateArray[VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.BACK]];} }
 
         // Methods
         protected static (float, float)[] ConvertToFractionalCoordinateArray((byte, byte)[] IndexArray)

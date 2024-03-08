@@ -58,6 +58,7 @@ namespace LocalWorld
             _surfaceTool.SetMaterial(_material);
             _surfaceTool.GenerateNormals(false);
 
+            GD.Print(BlockResources.blockList);
             for (byte y = 0; y < ChunkResources.CHUNK_HEIGHT; y++) {
                 for (byte x = 0; x < ChunkResources.CHUNK_WIDTH; x++) {
                     for (byte z = 0; z < ChunkResources.CHUNK_WIDTH; z++) {
@@ -75,15 +76,15 @@ namespace LocalWorld
 
         private void DrawBlock(Vector3 position, BaseBlock block)
         {
-            DrawFaceByDirection(position, Convert.ToByte(VoxelResources.FaceIndex.TOP), block.TopFaceAtlasIndex);
-            DrawFaceByDirection(position, Convert.ToByte(VoxelResources.FaceIndex.BOTTOM), block.BottomFaceAtlasIndex);
-            DrawFaceByDirection(position, Convert.ToByte(VoxelResources.FaceIndex.LEFT), block.LeftFaceAtlasIndex);
-            DrawFaceByDirection(position, Convert.ToByte(VoxelResources.FaceIndex.RIGHT), block.RightFaceAtlasIndex);
-            DrawFaceByDirection(position, Convert.ToByte(VoxelResources.FaceIndex.FRONT), block.FrontFaceAtlasIndex);
-            DrawFaceByDirection(position, Convert.ToByte(VoxelResources.FaceIndex.BACK), block.BackFaceAtlasIndex);
+            DrawFaceByDirection(position, VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.TOP], block.TopFaceAtlasUVCoordinate);
+            DrawFaceByDirection(position, VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.BOTTOM], block.BottomFaceAtlasUVCoordinate);
+            DrawFaceByDirection(position, VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.LEFT], block.LeftFaceAtlasUVCoordinate);
+            DrawFaceByDirection(position, VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.RIGHT], block.RightFaceAtlasUVCoordinate);
+            DrawFaceByDirection(position, VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.FRONT], block.FrontFaceAtlasUVCoordinate);
+            DrawFaceByDirection(position, VoxelResources.FaceIndexDictionary[VoxelResources.FaceIndex.BACK], block.BackFaceAtlasUVCoordinate);
         }
 
-        private void DrawFaceByDirection(Vector3 position, byte directionIndex, (float, float) atlasIndex)
+        private void DrawFaceByDirection(Vector3 position, byte directionIndex, (float, float) atlasUVCoordinate)
         {
             Vector3[] vertices = new Vector3[] {
                 VoxelResources.voxelVertices[VoxelResources.voxelTriangles[directionIndex, 0]] + position,
@@ -92,12 +93,12 @@ namespace LocalWorld
                 VoxelResources.voxelVertices[VoxelResources.voxelTriangles[directionIndex, 3]] + position
             };
 
-            Vector2 uvVertex_bottomRight = new((atlasIndex.Item1 + 1) * BlockResources.BASE_BLOCK_TEXTURE_WIDTH, atlasIndex.Item2 * BlockResources.BASE_BLOCK_ATLAS_HEIGHT);
+            Vector2 uvVertex_bottomRight = new((atlasUVCoordinate.Item1 + 1) * BlockResources.BASE_BLOCK_TEXTURE_WIDTH, atlasUVCoordinate.Item2 * BlockResources.BASE_BLOCK_ATLAS_HEIGHT);
             Vector2 uvVertex_topRight =
-                new((atlasIndex.Item1 + 1) * BlockResources.BASE_BLOCK_TEXTURE_WIDTH,
-                (atlasIndex.Item2 + 1) * BlockResources.BASE_BLOCK_TEXTURE_HEIGHT);
-            Vector2 uvVertex_bottomLeft = new(atlasIndex.Item1 * BlockResources.BASE_BLOCK_ATLAS_WIDTH, atlasIndex.Item2 * BlockResources.BASE_BLOCK_ATLAS_HEIGHT);
-            Vector2 uvVertex_topLeft = new(atlasIndex.Item1 * BlockResources.BASE_BLOCK_ATLAS_WIDTH, (atlasIndex.Item2 + 1) * BlockResources.BASE_BLOCK_TEXTURE_HEIGHT);
+                new((atlasUVCoordinate.Item1 + 1) * BlockResources.BASE_BLOCK_TEXTURE_WIDTH,
+                (atlasUVCoordinate.Item2 + 1) * BlockResources.BASE_BLOCK_TEXTURE_HEIGHT);
+            Vector2 uvVertex_bottomLeft = new(atlasUVCoordinate.Item1 * BlockResources.BASE_BLOCK_ATLAS_WIDTH, atlasUVCoordinate.Item2 * BlockResources.BASE_BLOCK_ATLAS_HEIGHT);
+            Vector2 uvVertex_topLeft = new(atlasUVCoordinate.Item1 * BlockResources.BASE_BLOCK_ATLAS_WIDTH, (atlasUVCoordinate.Item2 + 1) * BlockResources.BASE_BLOCK_TEXTURE_HEIGHT);
 
             Vector3[] triangle = new Vector3[] { vertices[0], vertices[1], vertices[2] };
             Vector2[] uv = new Vector2[] { uvVertex_bottomRight, uvVertex_topRight, uvVertex_bottomLeft };

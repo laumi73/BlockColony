@@ -21,11 +21,11 @@ namespace LocalWorld.BlockNS
 
         // Properties
         public override BlockResources.BlockDictionary BlockEnum { get { return _blockEnum; } }
-        public override (byte, byte) TopFaceAtlasIndex { get { return _topFaceIndex; } }
-        public override (byte, byte) BottomFaceAtlasIndex { get { return _bottomFaceIndex; } }
-        public override (byte, byte) LeftFaceAtlasIndex { get { return _leftFaceIndex; } }
-        public override (byte, byte) RightFaceAtlasIndex { get { return _rightFaceIndex; } }
-        public override (byte, byte) FrontFaceAtlasIndex { get { return _frontFaceIndex; } }
-        public override (byte, byte) BackFaceAtlasIndex { get { return _backFaceIndex; } }
+        protected override (byte, byte) TopFaceAtlasIndex { get { return _topFaceIndex; } }
+        protected override (byte, byte) BottomFaceAtlasIndex { get { return _bottomFaceIndex; } }
+        protected override (byte, byte) LeftFaceAtlasIndex { get { return _leftFaceIndex; } }
+        protected override (byte, byte) RightFaceAtlasIndex { get { return _rightFaceIndex; } }
+        protected override (byte, byte) FrontFaceAtlasIndex { get { return _frontFaceIndex; } }
+        protected override (byte, byte) BackFaceAtlasIndex { get { return _backFaceIndex; } }
     }
 }

@@ -1,9 +1,20 @@
+using System.Collections.Generic;
 using Godot;
 
 namespace LocalWorld
 {
     public static class VoxelResources
     {
+        static VoxelResources() {
+            FaceIndexDictionary.Add(FaceIndex.TOP, 0);
+            FaceIndexDictionary.Add(FaceIndex.BOTTOM, 1);
+            FaceIndexDictionary.Add(FaceIndex.LEFT, 2);
+            FaceIndexDictionary.Add(FaceIndex.RIGHT, 3);
+            FaceIndexDictionary.Add(FaceIndex.FRONT, 4);
+            FaceIndexDictionary.Add(FaceIndex.BACK, 5);
+        }
+
+        public static readonly Dictionary<FaceIndex, byte> FaceIndexDictionary = new Dictionary<FaceIndex, byte>();
         public static readonly Vector3[] voxelVertices = new Vector3[8] {
             new(0f, 0f, 0f), //0
 			new(1f, 0f, 0f), //1
@@ -31,14 +42,14 @@ namespace LocalWorld
             new(0f, 1f)
         };
 
-        public enum FaceIndex : byte
+        public enum FaceIndex
         {
-            TOP = 0,
-            BOTTOM = 1,
-            LEFT = 2,
-            RIGHT = 3,
-            FRONT = 4,
-            BACK = 5
+            TOP,
+            BOTTOM,
+            LEFT,
+            RIGHT,
+            FRONT,
+            BACK
         }
     }
 }
